@@ -10,11 +10,10 @@ public class Entity
     private ArrayList<Entity> heldEntities;
 
     public Entity(Point position, Point perspective, boolean alive, float durability, float damage, float strength,
-                  float mass, float capacity, float volume, float oxygen, float hydration, float saturation)
+    float mass, float capacity, float volume, float oxygen, float hydration, float saturation)
     {
         this.position = position;
         this.perspective = perspective;
-
         this.alive = alive;
         this.durability = durability;
         this.damage = damage;
@@ -25,7 +24,6 @@ public class Entity
         this.oxygen = oxygen;
         this.hydration = hydration;
         this.saturation = saturation;
-
         heldEntities = new ArrayList<>();
     }
 
@@ -42,9 +40,9 @@ public class Entity
         return position;
     }
 
-    public void setPosition(Point position)
+    public void setPosition(Point newPosition)
     {
-        this.position = position;
+        position = newPosition;
     }
 
     public Point getPerspective()
@@ -52,9 +50,9 @@ public class Entity
         return perspective;
     }
 
-    public void setPerspective(Point perspective)
+    public void setPerspective(Point newPerspective)
     {
-        this.perspective = perspective;
+        perspective = newPerspective;
     }
 
     public boolean isAlive()
@@ -62,9 +60,9 @@ public class Entity
         return alive;
     }
 
-    public void setAlive(boolean alive)
+    public void setAlive(boolean isAlive)
     {
-        this.alive = alive;
+        alive = isAlive;
     }
 
     public float getDurability()
@@ -72,9 +70,19 @@ public class Entity
         return durability;
     }
 
-    public void setDurability(float durability)
+    public void setDurability(float newDurability)
     {
-        this.durability = durability;
+        durability = newDurability;
+    }
+
+    public void addToDurability(float additionalDurability)
+    {
+        durability += additionalDurability;
+    }
+
+    public void multiplyDurability(float durabilityMultiplier)
+    {
+        durability *= durabilityMultiplier;
     }
 
     public float getDamage()
@@ -87,14 +95,34 @@ public class Entity
         this.damage = damage;
     }
 
+    public void addToDamage(float additionalDamage)
+    {
+        damage += additionalDamage;
+    }
+
+    public void multiplyDamage(float damageMultiplier)
+    {
+        damage *= damageMultiplier;
+    }
+
     public float getStrength()
     {
         return strength;
     }
 
-    public void setStrength(float strength)
+    public void setStrength(float newStrength)
     {
-        this.strength = strength;
+        strength = newStrength;
+    }
+
+    public void addToStrength(float additionalStrength)
+    {
+        strength += additionalStrength;
+    }
+
+    public void multiplyStrength(float strengthMultiplier)
+    {
+        strength *= strengthMultiplier;
     }
 
     public float getMass()
@@ -102,9 +130,19 @@ public class Entity
         return mass;
     }
 
-    public void setMass(float mass)
+    public void setMass(float newMass)
     {
-        this.mass = mass;
+        mass = newMass;
+    }
+
+    public void addToMass(float additionalMass)
+    {
+        mass += additionalMass;
+    }
+
+    public void multiplyMass(float massMultiplier)
+    {
+        mass *= massMultiplier;
     }
 
     public float getCapacity()
@@ -117,14 +155,34 @@ public class Entity
         this.capacity = capacity;
     }
 
+    public void addToCapacity(float additionalCapacity)
+    {
+        capacity += additionalCapacity;
+    }
+
+    public void multiplyCapacity(float capacityMultiplier)
+    {
+        capacity *= capacityMultiplier;
+    }
+
     public float getVolume()
     {
         return volume;
     }
 
-    public void setVolume(float volume)
+    public void setVolume(float newVolume)
     {
-        this.volume = volume;
+        volume = newVolume;
+    }
+
+    public void addToVolume(float additionalVolume)
+    {
+        volume += additionalVolume;
+    }
+
+    public void multiplyVolume(float volumeMultiplier)
+    {
+        volume *= volumeMultiplier;
     }
 
     public float getOxygen()
@@ -132,9 +190,19 @@ public class Entity
         return oxygen;
     }
 
-    public void setOxygen(float oxygen)
+    public void setOxygen(float newOxygen)
     {
-        this.oxygen = oxygen;
+        oxygen = newOxygen;
+    }
+
+    public void addToOxygen(float additionalOxygen)
+    {
+        oxygen += additionalOxygen;
+    }
+
+    public void multiplyOxygen(float oxygenMultiplier)
+    {
+        oxygen *= oxygenMultiplier;
     }
 
     public float getHydration()
@@ -142,9 +210,19 @@ public class Entity
         return hydration;
     }
 
-    public void setHydration(float hydration)
+    public void setHydration(float newHydration)
     {
-        this.hydration = hydration;
+        hydration = newHydration;
+    }
+
+    public void addToHydration(float additionalHydration)
+    {
+        hydration += additionalHydration;
+    }
+
+    public void multiplyHydration(float hydrationMultiplier)
+    {
+        hydration *= hydrationMultiplier;
     }
 
     public float getSaturation()
@@ -152,9 +230,19 @@ public class Entity
         return saturation;
     }
 
-    public void setSaturation(float saturation)
+    public void setSaturation(float newSaturation)
     {
-        this.saturation = saturation;
+        saturation = newSaturation;
+    }
+
+    public void addToSaturation(float additionalSaturation)
+    {
+        saturation += additionalSaturation;
+    }
+
+    public void multiplySaturation(float saturationMultiplier)
+    {
+        saturation *= saturationMultiplier;
     }
 
     public ArrayList<Entity> getHeldEntities()
@@ -162,8 +250,8 @@ public class Entity
         return heldEntities;
     }
 
-    public void setHeldEntities(ArrayList<Entity> heldEntities)
+    public void setHeldEntities(ArrayList<Entity> newHeldEntities)
     {
-        this.heldEntities = heldEntities;
+        heldEntities = newHeldEntities;
     }
 }

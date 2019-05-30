@@ -20,10 +20,10 @@ public class EntityTest
         float oxygen = 0.9f;
         float hydration = 0.9f;
         float saturation = 0.9f;
-
         Entity creature;
 
-        creature = new Entity(position, perspective, alive, durability, damage, strength, mass, capacity, volume, oxygen, hydration, saturation);
+        creature = new Entity(position, perspective, alive, durability, damage, strength, mass, capacity, volume,
+        oxygen, hydration, saturation);
 
         Assertions.assertEquals(true, creature instanceof Entity);
     }
@@ -43,13 +43,18 @@ public class EntityTest
         float oxygen = 0.9f;
         float hydration = 0.9f;
         float saturation = 0.9f;
-        Entity creature = new Entity(position, perspective, alive, durability, damage, strength, mass, capacity, volume, oxygen, hydration, saturation);
+        Entity creature = new Entity(position, perspective, alive, durability, damage, strength, mass, capacity, volume,
+        oxygen, hydration, saturation);
+        boolean isAliveBeforeDamageIncrease;
+        boolean isAliveAfterDamageIncrease;
 
         creature.update();
-        Assertions.assertEquals(true, creature.isAlive());
-
+        isAliveBeforeDamageIncrease = creature.isAlive();
         creature.setDamage(1f);
         creature.update();
-        Assertions.assertEquals(false, creature.isAlive());
+        isAliveAfterDamageIncrease = creature.isAlive();
+
+        Assertions.assertEquals(true, isAliveBeforeDamageIncrease);
+        Assertions.assertEquals(false, isAliveAfterDamageIncrease);
     }
 }
